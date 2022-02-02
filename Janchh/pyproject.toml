@@ -10,6 +10,7 @@ numpy = "^1.22.1"
 matplotlib = "^3.5.1"
 jupyterlab = "^3.2.8"
 pyplot-themes = "^0.2.2"
+ipywidgets = "^7.6.5"
 
 [tool.poetry.dev-dependencies]
 
