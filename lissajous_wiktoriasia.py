@@ -15,12 +15,15 @@ t = linspace(-pi,pi,1000)
 x = sin(a * t + delta)
 y = sin(b * t)
 
+
 fig, ax = plt.subplots()
 fig.suptitle('Krzywa Lissajous twoich marzeń', fontsize=12)
 
 line = plt.plot(x, y, color='pink')
 
+
 plt.subplots_adjust( bottom=0.43)
+
 
 axfreq = plt.axes([0.18, 0.3, 0.65, 0.03])
 a_slider = Slider(
@@ -47,7 +50,7 @@ d_slider = Slider(
     ax=dxfreq,
     label='wartość d',
     valmin=1,
-    valmax=10,
+    valmax=20,
     valinit=d,
     valstep=1.0
 )
@@ -56,8 +59,8 @@ d_slider = Slider(
 def update(val):
     delta = pi/d_slider.val
 
-    line.set_xdata(sin(a_slider.val * t + delta))
-    line.set_ydata(sin(b_slider.val * t))
+    line[0].set_xdata(sin(a_slider.val * t + delta))
+    line[0].set_ydata(sin(b_slider.val * t))
 
     fig.canvas.draw_idle()
 
